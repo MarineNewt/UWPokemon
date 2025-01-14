@@ -1,92 +1,187 @@
-.container {
-  min-height: 100vh;
-  padding: 0 0.5rem;
+.container{
+  height: 100dvh;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+  background-color: rgb(39, 39, 41);
+  overflow-y: scroll;
+  overflow-x: hidden;
+  scroll-snap-type: y proximity;
+  scroll-behavior: smooth;
+}
+.background{
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background-position: center;
+  background-size: cover;
+  opacity: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.backgroundbright{
+  height: 100dvh;
+  width: 100%;
+  position: absolute;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.page{
+  height: 100dvh;
+  width: 100%;
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  color: rgb(0, 0, 0);
+  background-position: center;
+  background-size: cover;
+  scroll-snap-align: start;
+}
+.pagealt{
+  height: 100dvh;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(206, 218, 231);
+  color: rgb(0, 0, 0);
+  scroll-snap-align: start;
 }
 
-.title a {
-  color: #0070f3;
-  text-decoration: none;
+.title{
+  font-size: 8vw;
+  z-index: 1;
+  line-height: 10vw;
+  padding-bottom: 4vw;
+  letter-spacing: .2rem;
+  color: rgb(255, 251, 0);
+  text-shadow: 5px 5px 1px rgb(60, 90, 166);
 }
 
-.title a:hover,
-.title a:focus,
-.title a:active {
+.heading{
+  font-size: 42px;
+  margin-top: 5vh;
+  margin-bottom: 2vh;
+}
+.heading2{
+  font-size: 3.5vw;
   text-decoration: underline;
+  text-underline-offset: 4px;
+  padding-bottom: 1vw;
+}
+.heading3{
+  font-size: 1.9vw;
+  font-weight: 600;
+  line-height: 110%;
+}
+.infotext1{
+  font-size: 1.75vw;
+  margin-top: 0;
+  text-indent: 2em;
+  font-weight: 600;
 }
 
-.title {
-  margin: 0 0 1rem;
-  line-height: 1.15;
-  font-size: 3.6rem;
+.logo{
+  width: 25vw;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  animation: catch 2s linear infinite;
 }
 
-.title {
-  text-align: center;
+.eventcontainer{
+  display: flex;
+  justify-content: space-between;
+  color: rgb(255, 251, 0);
+  background-color: rgb(60, 90, 166);
+  border-radius: 5vw;
+  padding-block: 5vw;
+}
+.contactcontainer{
+  background-color: rgb(39, 39, 41);
+  color: aliceblue;
+  padding: 2vw;
+  border-radius: 2vw;
+  margin-left: 75%;
+}
+.socialblockcontainer{
+  margin-top: 4vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.socialblock{
+  position: relative;
+  background-color: antiquewhite;
+  font-size: 2.3vw;
+  width: 30vw;
+  margin-bottom: 1vw;
+  padding: 1.25vw;
+  border-radius: 15vw;
+  text-align: end;
+}
+.exampleimage{
+  position: absolute;
+  left: .7vw;
+  bottom: .4vw;
+  width: 4vw;
+  height: 4vw;
+  border-radius: 50%;
+
 }
 
-.title,
-.description {
-  text-align: center;
-}
-
-.description {
-  line-height: 1.5;
-  font-size: 1.5rem;
-}
-
-.grid {
+.center{
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-wrap: wrap;
-
-  max-width: 800px;
-  margin-top: 3rem;
+}
+.flex{
+  display: flex;
 }
 
-.card {
-  margin: 1rem;
-  flex-basis: 45%;
-  padding: 1.5rem;
-  text-align: left;
-  color: inherit;
-  text-decoration: none;
-  border: 1px solid #eaeaea;
-  border-radius: 10px;
-  transition:
-    color 0.15s ease,
-    border-color 0.15s ease;
+@keyframes catch {
+  0%{
+    transform: rotate(0deg);
+  }
+  12%{
+    transform: rotate(25deg);
+  }
+  25%{
+    transform: rotate(0deg);
+  }
+  37%{
+    transform: rotate(-25deg);
+  }
+  50%{
+    transform: rotate(0deg);
+  }
+  100%{
+    transform: rotate(0deg);
+  }
 }
-
-.card:hover,
-.card:focus,
-.card:active {
-  color: #0070f3;
-  border-color: #0070f3;
-}
-
-.card h3 {
-  margin: 0 0 1rem 0;
-  font-size: 1.5rem;
-}
-
-.card p {
-  margin: 0;
-  font-size: 1.25rem;
-  line-height: 1.5;
-}
-
-.logo {
-  height: 1em;
-}
-
-@media (max-width: 600px) {
-  .grid {
-    width: 100%;
-    flex-direction: column;
+@keyframes catch2 {
+  0%{
+    transform: rotate(0deg);
+  }
+  17%{
+    transform: rotate(-20deg);
+  }
+  35%{
+    transform: rotate(0deg);
+  }
+  52%{
+    transform: rotate(20deg);
+  }
+  70%{
+    transform: rotate(0deg);
+  }
+  100%{
+    transform: rotate(0deg);
   }
 }

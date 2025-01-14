@@ -1,0 +1,41 @@
+.Navbar {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  height: clamp(20px, 8vh, 1000px);
+  width: 100%;
+  top: 0;
+  padding-right: 5vw;
+  z-index: 1;
+  font-size: clamp(20px, 1.5vw, 1000px);
+  text-decoration: none;
+  backdrop-filter: blur(1px)
+}
+
+.none{
+  all: unset;
+  margin-inline: 2vw;
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+  font-weight: 500;
+}
+
+/* Mobile */
+@media only screen and (max-width: 1026px) {
+  .Navbar{
+    height: clamp(20px, 10vh, 1000px);
+  }
+}
+
+.tree {
+  position: absolute;
+  z-index: 10;
+  background-color: aliceblue;
+
+}
+
+.treepiece:hover{
+ background-color: antiquewhite;
+}
