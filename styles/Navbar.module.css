@@ -11,13 +11,13 @@
   z-index: 1;
   font-size: clamp(20px, 1.5vw, 1000px);
   text-decoration: none;
-  backdrop-filter: blur(1px)
+  backdrop-filter: blur(5px)
 }
 
 .none{
   all: unset;
   margin-inline: 2vw;
-  color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
   cursor: pointer;
   font-weight: 500;
 }

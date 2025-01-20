@@ -4,10 +4,11 @@
   margin: 0;
   padding: 0;
   background-color: rgb(39, 39, 41);
-  overflow-y: scroll;
+  overflow-y: hidden;
   overflow-x: hidden;
   scroll-snap-type: y proximity;
   scroll-behavior: smooth;
+
 }
 .background{
   height: 100%;
