@@ -6,7 +6,7 @@ export default function Navbar({}) {
       <Link href="/" className={Navcss.none}>Home</Link>
       <Link href="/about" className={Navcss.none}>About</Link>
       <Link href="/meetings" className={Navcss.none}>Events</Link>
-      <Link href="/socials" className={Navcss.none}>Contact</Link>
+      <Link href="/contacts" className={Navcss.none}>Contact</Link>
     </nav>
     </>
 }
