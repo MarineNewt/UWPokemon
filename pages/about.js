@@ -21,7 +21,7 @@ export default function About() {
       <div id="about" className={styles.pagealt}>
         <div style={{width: "60%", paddingInline: "10%"}}>
           <h1 className={[styles.heading, gametype.className].join(" ")}> Welcome to The Pokemon Trainer Club</h1>
-          <p className={styles.infotext1}>The Pokémon Trainer Club at the University of Washington is dedicated to providing and promoting a fun, open community for all Pokémon fans, new and old! We have weekly meetups on Wednesdays from 5:00-6:30pm at the HUB where we have planned activities that can include viewings, tournaments, trivia games, art & crafts and much more!</p>
+          <p className={styles.infotext1}>The Pokémon Trainer Club at the University of Washington is dedicated to providing and promoting a fun, open community for all Pokémon fans, new and old! We have weekly meetups on Wednesdays from 5:00-6:00pm in Savery 260 where we have planned activities that can include social games like trivia, debate nights, tournaments, art & crafts and much more!</p>
         </div>
         <div style={{width: "40%"}}><img src={logo.src} className={styles.logo}/></div>
       </div>

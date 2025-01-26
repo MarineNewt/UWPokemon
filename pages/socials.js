@@ -21,12 +21,15 @@ export default function Socials() {
       <div id="socials" className={[styles.pagealt, gametype.className].join(" ")} style={{backgroundColor: `rgb(140, 193, 125)`}} >
         
         <div>
-          <h1 className={styles.heading}> Join us on: </h1>
+          <h1 className={styles.heading}> Join us on Discord for the most up-to-date info: </h1>
           <div className={styles.socialblockcontainer}>
             <a href="https://discord.gg/PHgz2hWk8C" target="_blank" rel="noopener noreferrer" className={styles.socialblock}> <img src={logo.src} className={styles.exampleimage}/> Discord </a>
+          </div>
+          <h1 className={styles.heading}> Also see us on: </h1>
+          <div className={styles.socialblockcontainer}>
             <a href="https://www.instagram.com/uwpkmn/" target="_blank" rel="noopener noreferrer" className={styles.socialblock}> <img src={logo.src} className={styles.exampleimage}/> Instagram </a>
-            <a href="https://www.tiktok.com/@uw_pokemon_club" target="_blank" rel="noopener noreferrer" className={styles.socialblock}> <img src={logo.src} className={styles.exampleimage}/> Tiktok </a>
-            <a href="https://x.com/uwpkmn" target="_blank" rel="noopener noreferrer" className={styles.socialblock}> <img src={logo.src} className={styles.exampleimage}/>  X </a>
+            <a className={styles.emailblock}> <img src={logo.src} className={styles.exampleimage}/> Club Email: uwpokemon@uw.edu </a>
+            <a className={styles.emailblock}> <img src={logo.src} className={styles.exampleimage}/> Officer Email: dbzfan@uw.edu </a>
           </div>
         </div>
       </div>

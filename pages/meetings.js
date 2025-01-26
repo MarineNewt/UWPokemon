@@ -26,22 +26,26 @@ export default function Meetings() {
               <h1 className={styles.heading2}> Meetings </h1>
               <div style={{width: "30vw"}} className={styles.heading3}>
               <br></br>
-                <p>Wednesdays 5:00pm - 6:30pm at the HUB for Casual Meetings.</p>
+                <p>Wednesdays 5:00pm - 7:00pm</p>
                 <br></br>
-                <p>Tuesdays 5:00pm - 7:00pm at Suzzalo for Competitive Meetings & Tournaments.</p>
+                <p>1/29 Debate Night - Madrona 311</p>
+                <br></br>
+                <p>2/5 TCG Night - Savery 260</p>
+                <br></br>
+                <p>2/12 Movie Night - Savery 260</p>
+                <br></br>
+                <p>2/19 Pokemon Club x WGA Smash Collab - HUB Games</p>
+                <br></br>
+                <p>2/26 Pokemon Club x Game Dev Club Collab - More 221</p>
               </div>
             </div>
             <div style={{paddingInline: "3vw"}}>
               <h1 className={styles.heading2}> Events </h1>
               <div style={{width: "30vw"}} className={styles.heading3}>
               <br></br>
-                <p>10/26 Movie Night</p>
+                <p>2/27, 5:00pm - 7:00pm: Pokemon Club x Anime Discovery Project - Miller 301</p>
                 <br></br>
-                <p>10/27 TCG Night</p>
-                <br></br>
-                <p>11/7 Pokemon Unite intro</p>
-                <br></br>
-                <p>11/8 Trivia Night</p>
+                <p>2/28, 5:00pm - 7:00pm: Pokemon Club x Anime Nation - HUB Games Pool Hall</p>
               </div>
             </div>
           </div>

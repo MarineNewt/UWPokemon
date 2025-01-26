@@ -85,7 +85,7 @@
 .infotext1{
   font-size: 1.75vw;
   margin-top: 0;
-  text-indent: 2em;
+  text-indent: 0em;
   font-weight: 600;
 }
 
@@ -124,6 +124,16 @@
   width: 30vw;
   margin-bottom: 1vw;
   padding: 1.25vw;
+  border-radius: 15vw;
+  text-align: end;
+}
+.emailblock{
+  position: relative;
+  background-color: antiquewhite;
+  font-size: 1.8vw;
+  width: 58vw;
+  margin-bottom: 1vw;
+  padding: 1.5vw;
   border-radius: 15vw;
   text-align: end;
 }
