@@ -28,7 +28,7 @@ export default function Home() {
       </Head>
       <Navbar/>
 
-      <div className={styles.page} style={{backgroundImage: `url(${bgimage.src})`}}>
+      <div id="index" className={styles.page} style={{backgroundImage: `url(${bgimage.src})`}}>
         <h2 className={[styles.title, poketype.className].join(" ")}> UW Pokémon <br></br>Trainer Club </h2>
       </div>
 
