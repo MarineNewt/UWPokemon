@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import { useState } from "react";
-import styles from '../styles/Home.module.css';
+import styles from '../styles/Admin.module.css';
 import Dialog from '@mui/material/Dialog';
 import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
@@ -9,10 +9,14 @@ import DialogTitle from '@mui/material/DialogTitle';
 import TextField from '@mui/material/TextField';
 import Alert from '@mui/material/Alert';
 import Button from '@mui/material/Button';
+import { Roboto } from 'next/font/google'
+const roboto = Roboto({ subsets: ['latin'], weight: '700' })
 
 export default function About() {
   let [userverified, setVerify] = useState(false);
   let [userpassword, setPassword] = useState("");
+  let [focus, setFocus] = useState("About");
+  let [dataFull, setDataFull] = useState();
   const [alerts, setAlerts] = useState(false);
 
   async function Verify(password) {
@@ -22,6 +26,9 @@ export default function About() {
       body: JSON.stringify({password}),
     })
     if(response.status === 200){
+      const result = await response.json();
+      console.log(result.data.Item);
+      setDataFull(result.data.Item);
       return setVerify(true);
     }else{
       setAlerts(true);
@@ -32,7 +39,7 @@ export default function About() {
   }
 
   return (
-    <div className={[styles.container].join(" ")}>
+    <div className={[styles.container, roboto.className].join(" ")}>
       <Head>
         <title>Pokemon Trainer Club</title>
         <link rel="icon" href="/favicon.ico" />
@@ -68,10 +75,35 @@ export default function About() {
           <Button type="submit" disabled={alerts}>Submit</Button>
         </DialogActions>
       </Dialog>}
-      
-      <div id="admin" className={styles.pagealt}>
 
+      <div id="admin" style={{height: "100dvh"}}>
+        <div id="adminnav" className={styles.adminnav}>
+          <div onClick={() => {setFocus("About")}} style={{color: focus == "About" ? "rgb(43, 127, 147)" : "white"}}>About</div>
+          <div onClick={() => {setFocus("Meetings")}}  style={{color: focus == "Meetings" ? "rgb(43, 127, 147)" : "white"}}>Meetings 6</div>
+          <div onClick={() => {setFocus("Events")}}  style={{color: focus == "Events" ? "rgb(43, 127, 147)" : "white"}}>Events 4 </div>
+          <div onClick={() => {setFocus("Contacts")}}  style={{color: focus == "Contacts" ? "rgb(43, 127, 147)" : "white"}}>Contacts 2</div>
+        </div>
 
+        <div id="focusdisplay" className={styles.focusDisplay}>
+          {focus == "About" && <div className={styles.aboutfocus}> 
+            <div id="aboutnew" className={styles.aboutfocus_new}>           
+              <TextField
+              multiline
+              rows={6}
+              style={{width: "50%"}}
+              required
+              name="contentInput"
+              id="outlined-static"
+              type="text"
+              label="New content..."
+              margin="dense"
+            />
+            <button className={styles.aboutfocusbtn}> Update </button></div>  <div id="aboutcur" className={styles.aboutfocus_cur}> Current content:  <div style={{marginTop: "20px"}}>cur text</div> </div> 
+          </div>}
+          {focus == "Meetings" && <div> Meetings Tab </div>}
+          {focus == "Events" && <div> Events Tab </div>}
+          {focus == "Contacts" && <div> Contacts Tab </div>}
+        </div>
       </div>
 
     </div>

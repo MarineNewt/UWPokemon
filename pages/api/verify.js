@@ -41,7 +41,7 @@ export default async function handler(req, res){
     // Compare input password with stored hash
     const result = await bcrypt.compare(password, storedHash);
     if(result){
-      return res.status(200).json({ message: 'Password Verified' });
+      return res.status(200).json({ data, message: 'Password Verified' });
     }else{
       return res.status(401).json({ message: 'Incorrect Password' });
     }
