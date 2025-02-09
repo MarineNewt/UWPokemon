@@ -16,6 +16,7 @@ export default function About() {
   let [userverified, setVerify] = useState(false);
   let [userpassword, setPassword] = useState("");
   let [focus, setFocus] = useState("About");
+  let [newHome, setNewHome] = useState("");
   let [dataFull, setDataFull] = useState();
   const [alerts, setAlerts] = useState(false);
 
@@ -28,13 +29,29 @@ export default function About() {
     if(response.status === 200){
       const result = await response.json();
       console.log(result.data.Item);
-      setDataFull(result.data.Item);
+      setDataFull(result.data.Item); //Set Data before verifying to ensure page content loads with variable set.
       return setVerify(true);
     }else{
       setAlerts(true);
       const timeoutId = setTimeout(() => {
         setAlerts(false);
       }, 4000);
+    }
+  }
+
+  async function UpdateData(type, datas) {
+    const response = await fetch(`/api/update`, {
+      method: "POST",
+      headers: {"Content-Type": "application/json"},
+      body: JSON.stringify({type, datas}),
+    })
+    if(response.status === 200){
+      const result = await response.json();
+      console.log("Success") //Can consider adding further feedback for success/errors.
+    }else{
+      const result = await response.json();
+      console.log(result);
+      console.log("Error");
     }
   }
 
@@ -76,7 +93,7 @@ export default function About() {
         </DialogActions>
       </Dialog>}
 
-      <div id="admin" style={{height: "100dvh"}}>
+      {userverified && <div id="admin" style={{height: "100dvh"}}>
         <div id="adminnav" className={styles.adminnav}>
           <div onClick={() => {setFocus("About")}} style={{color: focus == "About" ? "rgb(43, 127, 147)" : "white"}}>About</div>
           <div onClick={() => {setFocus("Meetings")}}  style={{color: focus == "Meetings" ? "rgb(43, 127, 147)" : "white"}}>Meetings 6</div>
@@ -88,6 +105,7 @@ export default function About() {
           {focus == "About" && <div className={styles.aboutfocus}> 
             <div id="aboutnew" className={styles.aboutfocus_new}>           
               <TextField
+              onChange={(e) => {setNewHome(e.target.value)}}
               multiline
               rows={6}
               style={{width: "50%"}}
@@ -98,13 +116,13 @@ export default function About() {
               label="New content..."
               margin="dense"
             />
-            <button className={styles.aboutfocusbtn}> Update </button></div>  <div id="aboutcur" className={styles.aboutfocus_cur}> Current content:  <div style={{marginTop: "20px"}}>cur text</div> </div> 
+            <button className={styles.aboutfocusbtn} onClick={(e)=>{UpdateData(focus, newHome)}}> Update </button></div>  <div id="aboutcur" className={styles.aboutfocus_cur}> Current content:  <div style={{marginTop: "20px"}}>{dataFull.data_home.S}</div> </div> 
           </div>}
           {focus == "Meetings" && <div> Meetings Tab </div>}
           {focus == "Events" && <div> Events Tab </div>}
           {focus == "Contacts" && <div> Contacts Tab </div>}
         </div>
-      </div>
+      </div>}
 
     </div>
   );
